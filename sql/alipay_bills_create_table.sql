@@ -12,5 +12,5 @@ CREATE TABLE IF NOT EXISTS `alipay_bills` (
     `transaction_id` VARCHAR(64) NOT NULL UNIQUE COMMENT '交易订单号',
     `merchant_id` VARCHAR(64) COMMENT '商家订单号',
     `remark` TEXT COMMENT '备注',
-    `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP COMMENT '数据导入时间'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
