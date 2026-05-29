@@ -85,7 +85,7 @@ def convert_pdf(pdf_file, output_dir=None):
                         sheet.cell(row=ri + 2, column=ci + 1).number_format = (
                             "yyyy-mm-dd hh:mm:ss"
                         )
-                    except:
+                    except (ValueError, TypeError):
                         sheet.cell(row=ri + 2, column=ci + 1, value=col)
                 elif ci == 5:  # 金额转小数
                     try:
@@ -93,7 +93,7 @@ def convert_pdf(pdf_file, output_dir=None):
                         sheet.cell(row=ri + 2, column=ci + 1).number_format = (
                             "0.00"  # 保留两位小数
                         )
-                    except:
+                    except (ValueError, TypeError):
                         sheet.cell(row=ri + 2, column=ci + 1, value=col)
                 else:
                     sheet.cell(row=ri + 2, column=ci + 1, value=col)
